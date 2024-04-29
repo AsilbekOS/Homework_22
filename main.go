@@ -19,4 +19,11 @@ func main() {
 		fmt.Println("Faylga yozishda xarolik!!!", err)
 	}
 	fmt.Println("Faylga muvaffaqiyati yozildi")
+
+	useremail := git.GetUserEmail()
+	_, err = file.WriteString(useremail)
+	if err != nil {
+		fmt.Println("Faylga yozishda xatolik!", err)
+	}
+
 }

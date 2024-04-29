@@ -17,3 +17,15 @@ func GetUserName() string {
 
 	return cmd.String()
 }
+
+func GetUserEmail() string {
+	useremail := exec.Command("git", "config", "user.email")
+	var cmd bytes.Buffer
+	useremail.Stdout = &cmd
+	err := useremail.Run()
+	if err != nil {
+		fmt.Println("Xatolik!", err)
+	}
+
+	return cmd.String()
+}
